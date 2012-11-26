@@ -1,0 +1,29 @@
+{
+    "name": "gin/php-tools",
+    "type": "library",
+    "homepage": "https://github.com/Gin-san/php-tools",
+    "authors": [
+        {
+            "name": "Gin-san",
+            "email": "gin.san.rzlk.g@gmail.com",
+            "role": "Developer",
+            "homepage": ""
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/yaml": "2.1.*"
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "post-install-cmd": [
+        ],
+        "post-update-cmd": [
+        ]
+    }
+}
