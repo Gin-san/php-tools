@@ -10,7 +10,8 @@ use Tools\Curl\UrlGenerator;
 class Curl
 {
 
-  public static function execute(string $url, array $parameters, string $method = "GET", array $tags = array())
+  //public static function execute(string $url, array $parameters, string $method = "GET", array $tags = array())
+  public static function execute($url, $parameters, $method = "GET", $tags = array())
   {
     if (is_array($tags) && count($tags) > 1) {
       $url = UrlGenerator::generateTaggedUrl($url, $tags);
