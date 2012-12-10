@@ -1,6 +1,7 @@
 {
     "name": "gin/php-tools",
     "type": "library",
+    "version": "1.0",
     "homepage": "https://github.com/Gin-san/php-tools",
     "authors": [
         {
