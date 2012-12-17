@@ -3,10 +3,9 @@
 ** Curl.php
 */
 
-namespace Tools\Curl;
+namespace Gin\Tools\Curl;
 
-use Tools\Curl\UrlGenerator,
-  Tools\Curl\Constants;
+use Gin\Tools\Curl\UrlGenerator;
 
 class Curl
 {

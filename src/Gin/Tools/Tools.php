@@ -3,7 +3,7 @@
 ** Tools.php
 */
 
-namespace Tools;
+namespace Gin\Tools;
 
 class Tools
 {

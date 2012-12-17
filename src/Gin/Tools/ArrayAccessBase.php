@@ -3,7 +3,7 @@
 ** ArrayAccessBase.php
 */
 
-namespace Tools;
+namespace Gin\Tools;
 
 use ArrayAccess;
 

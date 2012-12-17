@@ -1,6 +1,6 @@
 <?php
 
-namespace Tools\Curl;
+namespace Gin\Tools\Curl;
 
 class UrlGenerator
 {

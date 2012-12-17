@@ -3,9 +3,9 @@
 ** Configuration.php
 */
 
-namespace Tools\Configuration;
+namespace Gin\Tools\Configuration;
 
-use Tools\ArrayAccessBase,
+use Gin\Tools\ArrayAccessBase,
   Symfony\Component\Yaml\Yaml;
 
 class Configuration extends ArrayAccessBase

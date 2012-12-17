@@ -3,7 +3,7 @@
 ** constant.php
 */
 
-namespace Tools\Constant;
+namespace Gin\Tools\Constant;
 
 use Symfony\Component\Yaml\Yaml,
   Symfony\Component\Finder\Finder;
