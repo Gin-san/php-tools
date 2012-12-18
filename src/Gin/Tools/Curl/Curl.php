@@ -45,7 +45,7 @@ class Curl
   ** Download an image from a url with the filename given
   ** return true if file uploaded or false otherwise
   */
-  public static function fetchimage(string $url_img, string $filename)
+  public static function fetchimage($url_img, $filename)
   {
     if (file_exists($filename)) {
       return true;
