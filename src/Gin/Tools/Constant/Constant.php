@@ -13,6 +13,21 @@ class Constant
   const LOADBYFILENAME = 1;
   const LOADBYDIRECTORY = 2;
 
+  public static function getValuesFromArray($array, $prefix = null)
+  {
+    $constants = array();
+    //echo $prefix . PHP_EOL;
+    //print_r($array);
+    foreach ($array as $key => $value) {
+      if (is_array($value)) {
+	$constants = array_merge($constants, self::getValuesFromArray($value, $prefix ? $prefix . '_' . $key : $key));
+	continue;
+      }
+      $constants[$prefix ? $prefix . '_' . $key : $key] = $value;
+    }
+    return $constants;
+  }
+
   public static function loadConstant($name, $mode = self::LOADBYFILENAME)
   {
     $filenames = array($name);
@@ -31,24 +46,13 @@ class Constant
       }
     }
 
+    $constants = array();
     if (count($filenames) > 0) {
-      $constants = array();
       foreach ($filenames as $filename) {
 	if (file_exists($filename)) {
 	  $yml = Yaml::parse($filename);
 	  if (is_array($yml)) {
-	    foreach ($yml as $key => $value) {
-	      if (is_array($value)) {
-		foreach ($value as $k => $v) {
-		  if (is_array($v)) {
-		    continue;
-		  }
-		  $constants[$key . '_' . $k] = $v;
-		}
-		continue;
-	      }
-	      $constants[$key] = $value;
-	    }
+	    $constants = self::getValuesFromArray($yml);
 	  }
 	}
       }
@@ -59,5 +63,20 @@ class Constant
 	}
       }
     }
+  }
+
+  public static function getConstantArrays($libelleConstant,$withprefix=false)
+  { 
+    $consts = get_defined_constants(true); 
+    $consts = $consts['user']; 
+    $constantArray = array();
+
+    $regexp ='/^' . $libelleConstant . '_(.+)$/'; 
+    foreach ($consts as $name => $val) { 
+      if (preg_match($regexp, $name)) { 
+	$constantArray[($withprefix ? $name : preg_replace($regexp, '$1', $name))] = $val; 
+      } 
+    } 
+    return $constantArray;
   }
 }
