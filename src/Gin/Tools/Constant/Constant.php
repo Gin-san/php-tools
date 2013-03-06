@@ -52,7 +52,7 @@ class Constant
 	if (file_exists($filename)) {
 	  $yml = Yaml::parse($filename);
 	  if (is_array($yml)) {
-	    $constants = self::getValuesFromArray($yml);
+	    $constants = array_merge($constants, self::getValuesFromArray($yml));
 	  }
 	}
       }
