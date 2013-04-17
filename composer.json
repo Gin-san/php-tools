@@ -20,11 +20,5 @@
         "symfony/yaml": "2.2.*",
 	"symfony/finder": "2.2.*"
     },
-    "minimum-stability": "stable",
-    "scripts": {
-        "post-install-cmd": [
-        ],
-        "post-update-cmd": [
-        ]
-    }
+    "minimum-stability": "stable"
 }

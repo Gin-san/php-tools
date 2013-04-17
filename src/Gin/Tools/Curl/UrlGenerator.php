@@ -6,11 +6,12 @@ class UrlGenerator
 {
   public static function generateGetUrl($url, $parameters)
   {
-    if (count($parameters) > 1){
-      $url .= preg_match('/\?/', $url) ? '&' : '?';
-      foreach ($parameters as $key => $value) {
-	$url .= $key . '=' . $value . '&';
+    if (count($parameters) > 1) {
+      $dlm = '&';
+      if (false === strpos($url, '?')) {
+	$dlm = "?";
       }
+      $url .= $dlm . http_build_query($parameters);
     }
     return $url;
   }
