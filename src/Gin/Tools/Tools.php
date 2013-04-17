@@ -23,4 +23,16 @@ class Tools
     setlocale(LC_ALL, 'en_US.UTF8');
     return str_replace(' ', '_', trim(preg_replace('#[^\p{L}\p{N}]+#u', ' ', strtolower(iconv('UTF-8', 'ASCII//TRANSLIT', $text)))));
   }
+
+  // source: http://stackoverflow.com/questions/2353473/can-php-tell-if-the-server-os-it-64-bit#answer-5432564
+  public static function is_64bit() {
+    $int = "9223372036854775807";
+    $int = intval($int);
+    if ($int == 9223372036854775807) {
+      return true;
+    } elseif ($int == 2147483647) {
+      return false;
+    }
+    return "error";
+  }
 }
