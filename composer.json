@@ -17,8 +17,8 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/yaml": "2.2.*",
-	"symfony/finder": "2.2.*"
+        "symfony/yaml": ">=2.1.0",
+	"symfony/finder": ">=2.1.0"
     },
     "minimum-stability": "stable"
 }
