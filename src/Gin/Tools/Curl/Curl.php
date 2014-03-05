@@ -58,9 +58,12 @@ class Curl
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         if ($this->useCookie) {
-            curl_setopt( $ch, CURLOPT_COOKIESESSION, true );
-            curl_setopt( $ch, CURLOPT_COOKIEJAR, $this->getCookiePath());
-            curl_setopt( $ch, CURLOPT_COOKIEFILE, $this->getCookiePath());
+            curl_setopt($ch, CURLOPT_COOKIESESSION, true );
+            curl_setopt($ch, CURLOPT_COOKIEJAR, $this->getCookiePath());
+            curl_setopt($ch, CURLOPT_COOKIEFILE, $this->getCookiePath());
+        }
+        if ($this->user_agent) {
+            curl_setopt($ch, CURLOPT_USERAGENT, $this->user_agent);
         }
 
         $params          = array_merge($this->params, $params);
