@@ -178,7 +178,7 @@ class Curl
     {
         $this->http_header = $http_header;
 
-        return $http_header;
+        return $this;
     }
 
     /**
